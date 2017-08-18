@@ -14,14 +14,26 @@ public class AppTest extends TestCase {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
+    @Before
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+        System.setErr(new PrintStream(errContent));
+    }
+
+    @After
+    public void cleanUpStreams() {
+        System.setOut(null);
+        System.setErr(null);
+    }
+
+
     @Test
     public void testDrinkGetName(){
         //Arrange
         String testString = "Øl";
         Drink drink1 = new Drink("Øl",50,5,500);
-        String noe="";
         //Act
-        noe = drink1.getName();
+        String noe = drink1.getName();
         //Assert
         assertEquals(testString,noe);}
 
@@ -41,11 +53,7 @@ public class AppTest extends TestCase {
         assertEquals(drink1, drink3);
     }
 
-    @Before
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
-    }
+
 
     @Test
     public void testWriteInfoAboutDrinks(){
@@ -69,11 +77,7 @@ public class AppTest extends TestCase {
                 "4.place:   Lager  har 14.285714285714286 kroner per milliliter.\n",outContent.toString());
     }
 
-    @After
-    public void cleanUpStreams() {
-        System.setOut(null);
-        System.setErr(null);
-    }
+
 }
 
 
