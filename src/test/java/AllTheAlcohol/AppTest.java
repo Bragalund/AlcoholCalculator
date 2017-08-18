@@ -53,8 +53,6 @@ public class AppTest extends TestCase {
         assertEquals(drink1, drink3);
     }
 
-
-
     @Test
     public void testWriteInfoAboutDrinks(){
 
@@ -76,6 +74,8 @@ public class AppTest extends TestCase {
                 "3.place:   Sprit  har 2.4 kroner per milliliter.\n" +
                 "4.place:   Lager  har 14.285714285714286 kroner per milliliter.\n",outContent.toString());
     }
+
+    
 
 
 }
