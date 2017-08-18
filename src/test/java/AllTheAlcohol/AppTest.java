@@ -14,6 +14,7 @@ public class AppTest extends TestCase {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
+    @Test
     public void testDrinkGetName(){
         //Arrange
         String testString = "Øl";
@@ -24,6 +25,7 @@ public class AppTest extends TestCase {
         //Assert
         assertEquals(testString,noe);}
 
+    @Test
     public void testDrinkComparePricePrML(){
         //Arrange
         Drink drink1 = new Drink("Øl",50,5,500);
@@ -61,10 +63,10 @@ public class AppTest extends TestCase {
         writeCalculations.writeInfoAboutDrinks(drinks);
         cleanUpStreams();
         //Assert
-        assertEquals("1.place:   Øl  har 2.0 kroner per milliliter.\r\n" +
-                "2.place:   Vin  har 2.2 kroner per milliliter.\r\n" +
-                "3.place:   Sprit  har 2.4 kroner per milliliter.\r\n" +
-                "4.place:   Lager  har 14.285714285714286 kroner per milliliter.\r\n",outContent.toString());
+        assertEquals("1.place:   Øl  har 2.0 kroner per milliliter.\n" +
+                "2.place:   Vin  har 2.2 kroner per milliliter.\n" +
+                "3.place:   Sprit  har 2.4 kroner per milliliter.\n" +
+                "4.place:   Lager  har 14.285714285714286 kroner per milliliter.\n",outContent.toString());
     }
 
     @After
