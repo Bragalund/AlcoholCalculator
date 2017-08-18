@@ -6,15 +6,15 @@ public class Drink {
     private String name;
 
     public Drink(String name, int price, double percent, int amount) {
-        this.name=name;
-        this.price=price;
-        this.percent=percent;
-        this.amount=amount;
+        this.name = name;
+        this.price = price;
+        this.percent = percent;
+        this.amount = amount;
         this.alcoholPricePerMilliliter = calculateAlcoholPricePerMilliliter();
     }
 
-    public double calculateAlcoholPricePerMilliliter(){
-        double alcoholPricePerMilliliter=price/(amount*(percent/100));
+    public double calculateAlcoholPricePerMilliliter() {
+        double alcoholPricePerMilliliter = price / (amount * (percent / 100));
         return alcoholPricePerMilliliter;
     }
 
